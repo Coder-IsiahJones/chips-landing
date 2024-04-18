@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <Header class="header" />
+    <Header />
 
     <main class="main">
       <Home />
