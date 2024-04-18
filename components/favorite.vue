@@ -5,6 +5,8 @@ import favoriteChips2Image from "@/assets/img/favorite-chips-2.png";
 import favoriteChips3Image from "@/assets/img/favorite-chips-3.png";
 import leaf1Image from "@/assets/img/leaf-1.png";
 import leaf2Image from "@/assets/img/leaf-2.png";
+import Swiper from "swiper";
+import "swiper/css";
 
 // Define an array of image sources for cheese images
 const cheeseImages = [
@@ -21,6 +23,17 @@ const favoriteChips = [
 
 // Define image sources for leaf images
 const leafImages = [leaf1Image, leaf2Image];
+
+onMounted(() => {
+  let swiperFavorites = new Swiper(".favorites__swiper", {
+    loop: true,
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 3,
+    spaceBetween: 0,
+    initialSlide: 3,
+  });
+});
 </script>
 
 <template>
@@ -71,3 +84,9 @@ const leafImages = [leaf1Image, leaf2Image];
     </div>
   </section>
 </template>
+
+<style>
+.swiper {
+  overflow: visible !important;
+}
+</style>
