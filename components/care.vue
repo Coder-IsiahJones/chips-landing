@@ -1,4 +1,26 @@
-<script lang="ts" setup></script>
+<script setup lang="ts">
+const careItems = [
+  {
+    iconClass: "ri-plant-line",
+    description:
+      "The potatoes that are made into snacks are grown and harvested and are 100% organic.",
+  },
+  {
+    iconClass: "ri-fire-line",
+    description:
+      "We fry the fries with vegetable and natural oil for good care.",
+  },
+  {
+    iconClass: "ri-heart-pulse-line",
+    description:
+      "The potatoes are not processed, once cleaned they are cooked without preservatives.",
+  },
+  {
+    iconClass: "ri-hand-heart-line",
+    description: "They contain fewer calories and less fat for good health.",
+  },
+];
+</script>
 
 <template>
   <section class="care section" id="care">
@@ -9,30 +31,9 @@
 
     <div class="care__container container grid">
       <ul class="care__list">
-        <li class="care__item">
-          <i class="ri-plant-line"></i>
-          <p>
-            The potatoes that are made into snacks are grown and harvested and
-            are 100% organic.
-          </p>
-        </li>
-
-        <li class="care__item">
-          <i class="ri-fire-line"></i>
-          <p>We fry the fries with vegetable and natural oil for good care.</p>
-        </li>
-
-        <li class="care__item">
-          <i class="ri-heart-pulse-line"></i>
-          <p>
-            The potatoes are not processed, once cleaned they are cooked without
-            preservatives.
-          </p>
-        </li>
-
-        <li class="care__item">
-          <i class="ri-hand-heart-line"></i>
-          <p>They contain fewer calories and less fat for good health.</p>
+        <li class="care__item" v-for="item in careItems" :key="item.iconClass">
+          <i :class="item.iconClass"></i>
+          <p>{{ item.description }}</p>
         </li>
       </ul>
 
@@ -40,5 +41,3 @@
     </div>
   </section>
 </template>
-
-<style></style>
