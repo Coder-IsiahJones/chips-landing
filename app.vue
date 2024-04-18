@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import ScrollReveal from "@/assets/js/scrollreveal.min.js";
-
 onMounted(() => {
   const sr = ScrollReveal({
     origin: "top",
