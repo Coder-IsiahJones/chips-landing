@@ -1,4 +1,30 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import shrimp from "assets/img/shrimp.png";
+import crab from "assets/img/crab.png";
+import meat from "assets/img/meat.png";
+
+// Define an array of social media objects
+const socialMediaLinks = [
+  {
+    iconClass: "ri-whatsapp-fill",
+    link: "",
+  },
+  {
+    iconClass: "ri-messenger-fill",
+    link: "",
+  },
+  {
+    iconClass: "ri-mail-fill",
+    link: "mailto:examplemail@correo.com",
+  },
+];
+
+const images = [
+  { src: shrimp, alt: "Shrimp", className: "contact__shrimp" },
+  { src: crab, alt: "Crab", className: "contact__crab" },
+  { src: meat, alt: "Meat", className: "contact__meat" },
+];
+</script>
 
 <template>
   <section class="contact section" id="contact">
@@ -15,18 +41,12 @@
 
             <div class="contact__social">
               <a
-                href="https://api.whatsapp.com/send?phone=51123456789&text=Hello, more information!"
+                v-for="(socialMedia, index) in socialMediaLinks"
+                :key="index"
+                :href="socialMedia.link"
                 target="_blank"
               >
-                <i class="ri-whatsapp-fill"></i>
-              </a>
-
-              <a href="https://m.me/bedimcode" target="_blank">
-                <i class="ri-messenger-fill"></i>
-              </a>
-
-              <a href="mailto:examplemail@correo.com" target="_blank">
-                <i class="ri-mail-fill"></i>
+                <i :class="socialMedia.iconClass"></i>
               </a>
             </div>
           </div>
@@ -44,7 +64,7 @@
             <h3 class="contact__title">Find us here</h3>
 
             <address class="contact__info">
-              Lima - Sun City - Peru <br />
+              Fort Wayne - Indiana - US <br />
               Av. Moon #4321
             </address>
           </div>
@@ -57,11 +77,13 @@
         />
       </div>
 
-      <img src="assets/img/shrimp.png" alt="image" class="contact__shrimp" />
-      <img src="assets/img/crab.png" alt="image" class="contact__crab" />
-      <img src="assets/img/meat.png" alt="image" class="contact__meat" />
+      <img
+        v-for="(image, index) in images"
+        :key="index"
+        :src="image.src"
+        :alt="image.alt"
+        :class="image.className"
+      />
     </div>
   </section>
 </template>
-
-<style></style>
