@@ -1,4 +1,33 @@
 <script lang="ts" setup>
+useSeoMeta({
+  title: "Shop Chips Store",
+  description:
+    "Welcome to Shop Chips Store, your ultimate destination for the finest selection of crispy, crunchy, and flavorful chips! Explore our extensive range of tantalizing chip varieties, including classic favorites and exciting new flavors to satisfy every craving. From traditional potato chips to exotic and gourmet options, we have something for everyone. Indulge in our high-quality snacks, perfect for any occasion, whether you're snacking solo or entertaining guests. With Shop Chips Store, snack time just got a whole lot tastier. Browse our collection now and elevate your chip experience!",
+  ogTitle: "Shop Chips is a website that sells chips.",
+  ogDescription:
+    "Welcome to Shop Chips Store, your ultimate destination for the finest selection of crispy, crunchy, and flavorful chips! Explore our extensive range of tantalizing chip varieties, including classic favorites and exciting new flavors to satisfy every craving. From traditional potato chips to exotic and gourmet options, we have something for everyone. Indulge in our high-quality snacks, perfect for any occasion, whether you're snacking solo or entertaining guests. With Shop Chips Store, snack time just got a whole lot tastier. Browse our collection now and elevate your chip experience!",
+  ogImage: "https://chips-landing.netlify.app/preview.png",
+  ogUrl: "https://chips-landing.netlify.app",
+  twitterTitle: "Shop Chips Store",
+  twitterDescription:
+    "Welcome to Shop Chips Store, your ultimate destination for the finest selection of crispy, crunchy, and flavorful chips! Explore our extensive range of tantalizing chip varieties, including classic favorites and exciting new flavors to satisfy every craving. From traditional potato chips to exotic and gourmet options, we have something for everyone. Indulge in our high-quality snacks, perfect for any occasion, whether you're snacking solo or entertaining guests. With Shop Chips Store, snack time just got a whole lot tastier. Browse our collection now and elevate your chip experience!",
+  twitterImage: "https://chips-landing.netlify.app/preview.png",
+  twitterCard: "summary",
+});
+
+useHead({
+  htmlAttrs: {
+    lang: "en",
+  },
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.png",
+    },
+  ],
+});
+
 onMounted(() => {
   const sr = ScrollReveal({
     origin: "top",
