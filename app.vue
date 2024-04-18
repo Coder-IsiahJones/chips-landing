@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-// @ts-ignore
 import ScrollReveal from "ScrollReveal";
 
 onMounted(() => {
