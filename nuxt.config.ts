@@ -3,9 +3,7 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   css: ["~/assets/scss/styles.scss"],
-  build: {
-    transpile: ["ScrollReveal"],
-  },
+
   app: {
     head: {
       link: [
@@ -16,4 +14,6 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  modules: [],
 });
