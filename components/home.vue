@@ -1,4 +1,38 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import chipsOne from "@/assets/img/chips-1.png";
+import chipsTwo from "@/assets/img/chips-2.png";
+import chipsThree from "@/assets/img/chips-3.png";
+import tomatoOne from "@/assets/img/tomato-1.png";
+import tomatoTwo from "@/assets/img/tomato-2.png";
+import leafThree from "@/assets/img/leaf-3.png";
+
+const images = [
+  {
+    img: chipsOne,
+    className: "home__chips-1",
+  },
+  {
+    img: chipsTwo,
+    className: "home__chips-2",
+  },
+  {
+    img: chipsThree,
+    className: "home__chips-3",
+  },
+  {
+    img: tomatoOne,
+    className: "home__tomato-1",
+  },
+  {
+    img: tomatoTwo,
+    className: "home__tomato-2",
+  },
+  {
+    img: leafThree,
+    className: "home__leaf",
+  },
+];
+</script>
 
 <template>
   <section class="home section" id="home">
@@ -30,15 +64,14 @@
 
         <img src="assets/img/home-chips.png" alt="image" class="home__img" />
 
-        <img src="assets/img/chips-1.png" alt="image" class="home__chips-1" />
-        <img src="assets/img/chips-2.png" alt="image" class="home__chips-2" />
-        <img src="assets/img/chips-3.png" alt="image" class="home__chips-3" />
-        <img src="assets/img/tomato-1.png" alt="image" class="home__tomato-1" />
-        <img src="assets/img/tomato-2.png" alt="image" class="home__tomato-2" />
-        <img src="assets/img/leaf-3.png" alt="image" class="home__leaf" />
+        <img
+          v-for="(image, index) in images"
+          :src="image.img"
+          :alt="`image-${index}`"
+          :key="index"
+          :class="image.className"
+        />
       </div>
     </div>
   </section>
 </template>
-
-<style></style>
