@@ -47,33 +47,42 @@ onMounted(() => {
   };
   window.addEventListener("scroll", shadowHeader);
 });
+
+const navItems = ref([
+  { id: 0, label: "Home", href: "#home" },
+  { id: 1, label: "Favorites", href: "#favorites" },
+  { id: 2, label: "Care", href: "#care" },
+  { id: 3, label: "Products", href: "#products" },
+  { id: 4, label: "Contact", href: "#contact" },
+]);
+
+const activeIndex = ref(0);
+
+const socialMediaLinks = ref([
+  { href: "https://www.facebook.com/", iconClass: "ri-facebook-circle-line" },
+  { href: "https://www.instagram.com/", iconClass: "ri-instagram-line" },
+  { href: "https://twitter.com/", iconClass: "ri-twitter-x-line" },
+]);
 </script>
 
 <template>
   <header class="header" id="header">
     <nav class="nav container">
+      <!-- Nav logo -->
       <a href="#" class="nav__logo">CHIPS</a>
 
+      <!-- Nav menu -->
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
-          <li>
-            <a href="#home" class="nav__link active-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#favorites" class="nav__link">Favorites</a>
-          </li>
-
-          <li>
-            <a href="#care" class="nav__link">Care</a>
-          </li>
-
-          <li>
-            <a href="#products" class="nav__link">Products</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="nav__link">Contact</a>
+          <!-- Loop through your list items using v-for -->
+          <li v-for="item in navItems" :key="item.id">
+            <a
+              :href="item.href"
+              class="nav__link"
+              :class="{ 'active-link': item.id === activeIndex }"
+              @click="activeIndex = item.id"
+              >{{ item.label }}</a
+            >
           </li>
         </ul>
 
@@ -82,33 +91,21 @@ onMounted(() => {
           <i class="ri-close-large-line"></i>
         </div>
 
+        <!-- Social media links -->
         <div class="nav__social">
           <a
-            href="https://www.facebook.com/"
+            v-for="(socialMedia, index) in socialMediaLinks"
+            :key="index"
+            :href="socialMedia.href"
             target="_blank"
             class="nav__social-link"
           >
-            <i class="ri-facebook-circle-line"></i>
-          </a>
-
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            class="nav__social-link"
-          >
-            <i class="ri-instagram-line"></i>
-          </a>
-
-          <a
-            href="https://twitter.com/"
-            target="_blank"
-            class="nav__social-link"
-          >
-            <i class="ri-twitter-x-line"></i>
+            <i :class="socialMedia.iconClass"></i>
           </a>
         </div>
       </div>
 
+      <!-- Menu -->
       <div class="nav__toggle" id="nav-toggle">
         <i class="ri-apps-2-line"></i>
       </div>
